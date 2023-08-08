@@ -1,3 +1,4 @@
+from open_file import fileopen
 import speech_recognition as sr
 import os
 import pyttsx3  #voice response
@@ -44,19 +45,6 @@ def speak(text):
 #          print("Closing application...")
 #     else:
 #         print("Command not recognized.")
-def fileopen(command):
-    file_name = command.replace("open file", "").strip()
-    if os.path.exists(file_name):
-        try:
-            os.startfile(file_name)  # For Windows
-            # You can use other methods for opening files depending on the OS you are using.
-            # For macOS, you can use `subprocess.call(["open", file_name])`
-            # For Linux, you can use `subprocess.call(["xdg-open", file_name])`
-            speak(f"Opening file: {file_name}")
-        except Exception as e:
-            speak(f"Error opening file: {e}")
-    else:
-        speak("not found")
 
 # def perform_mouse_click(action):
 #     if "left click" in action:
@@ -85,7 +73,6 @@ def fileopen(command):
 #             print(f"Destination folder '{destination_folder}' not found.")
 #     else:
 #         print("No file has been copied yet.")
-
 def main():
     # recognizer = sr.Recognizer()
 
@@ -150,6 +137,7 @@ def main():
                             if "how are you" in recognized_text.lower():
                                 speak("Hello. I am good. How may I help you")
                             if "open file" in recognized_text.lower():
+                                # fileopen(recognized_text.lower())
                                 fileopen(recognized_text.lower())
                             # elif "copy file" in recognized_text.lower():
                             #     file_name = recognized_text.lower().replace("copy file", "").strip()
