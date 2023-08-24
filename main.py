@@ -1,6 +1,7 @@
 from open_file import fileopen
 from open_directory import directoryopen
 from search_google import google_search
+from chatgpt import chat_gpt
 import speech_recognition as sr
 import pyttsx3  #voice response
 # import shutil   #copy            #unins     #add copy parts
@@ -86,6 +87,8 @@ def main():
                                 directoryopen(recognized_text.lower())
                             elif "google" in recognized_text.lower():
                                 google_search(recognized_text.lower())
+                            elif "chat gpt" in recognized_text.lower():
+                                chat_gpt(recognized_text.lower())
                             # elif "copy file" in recognized_text.lower():
                             #     file_name = recognized_text.lower().replace("copy file", "").strip()
                             #     perform_copy_file(file_name)
