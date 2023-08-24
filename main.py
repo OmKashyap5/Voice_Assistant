@@ -12,33 +12,6 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# def perform_mouse_click(action):
-#     if "left click" in action:
-#         pyautogui.click()
-#         print("Performed left click.")
-#     elif "right click" in action:
-#         pyautogui.click(button='right')
-#         print("Performed right click.")
-#     else:
-#         print("Command not recognized.")
-# def perform_copy_file(file_name):
-#     global copied_file
-#     if os.path.exists(file_name):
-#         copied_file = file_name
-#         print(f"File '{file_name}' copied.")
-#     else:
-#         print(f"File '{file_name}' not found.")
-
-# def perform_paste_to_destination(destination_folder):
-#     global copied_file
-#     if copied_file:
-#         if os.path.exists(destination_folder):
-#             shutil.copy(copied_file, destination_folder)
-#             print(f"File copied to '{destination_folder}'.")
-#         else:
-#             print(f"Destination folder '{destination_folder}' not found.")
-#     else:
-#         print("No file has been copied yet.")
 def main():
 
     recognizer = sr.Recognizer()
